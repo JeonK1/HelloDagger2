@@ -11,13 +11,8 @@ class Hamburger @Inject constructor(
         val TAG = "Hamburger"
     }
 
-    @Inject
-    fun addMeat(meat: Meat) {
-        meat.add()
-        Log.d(TAG, "meat count = ${meat.count}")
-    }
-
     fun eat() {
+        Log.d(TAG, "meat count : ${meat.count}")
         Log.d(TAG, "yum~ yum~")
     }
 }

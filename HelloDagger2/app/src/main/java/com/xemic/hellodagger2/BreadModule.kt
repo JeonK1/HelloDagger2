@@ -4,9 +4,8 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-object BreadModule {
+class BreadModule {
 
-    @JvmStatic
     @Provides
     fun provideFoodInformation(): FoodInformation {
         return FoodInformation("korea", 0).also {
@@ -14,7 +13,6 @@ object BreadModule {
         }
     }
 
-    @JvmStatic
     @Provides
     fun provideBread(foodInfo: FoodInformation): Bread {
         return Bread(foodInfo)

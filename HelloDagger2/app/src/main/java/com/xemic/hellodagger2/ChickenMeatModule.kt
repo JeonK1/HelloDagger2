@@ -1,11 +1,20 @@
 package com.xemic.hellodagger2
 
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class ChickenMeatModule {
+class ChickenMeatModule (
+    private val count: Int
+) {
 
-    @Binds
-    abstract fun bindsMeat(meat: ChickenMeat): Meat
+    @Provides
+    fun provideCount(): Int {
+        return count
+    }
+
+    @Provides
+    fun provideMeat(meat: ChickenMeat): Meat {
+        return meat
+    }
 }

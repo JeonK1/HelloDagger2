@@ -12,8 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // #2. Field Injection: hambuerger 객체 DaggerHamburgerComponent.inject() 로 생성하기
-        val component: HamburgerComponent = DaggerHamburgerComponent.create()
+        val component: HamburgerComponent = DaggerHamburgerComponent
+            .builder()
+            .chickenMeatModule(ChickenMeatModule(2))
+            .build()
         component.inject(this)
 
         hamburger.eat()
