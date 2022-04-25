@@ -2,15 +2,16 @@ package com.xemic.hellodagger2
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Named
 
 @ActivityScope
-@Component(dependencies = [AppComponent::class], modules = [BreadModule::class, ChickenMeatModule::class])
+@Subcomponent(modules = [BreadModule::class, ChickenMeatModule::class])
 interface HamburgerComponent {
 
     fun inject(mainActivity: MainActivity)
 
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -18,8 +19,6 @@ interface HamburgerComponent {
 
         @BindsInstance
         fun meatGrade(@Named("grade") grade: Int): Builder
-
-        fun appComponent(component: AppComponent): Builder
 
         fun build(): HamburgerComponent
     }

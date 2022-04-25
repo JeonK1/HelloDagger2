@@ -12,10 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component: HamburgerComponent = DaggerHamburgerComponent.builder()
-            .meatGrade(1)
+        val component: HamburgerComponent = (application as MyApplication).appComponent
+            .getHamburgerComponentBuilder()
             .meatCount(2)
-            .appComponent((application as MyApplication).appComponent)
+            .meatGrade(1)
             .build()
         component.inject(this)
 
