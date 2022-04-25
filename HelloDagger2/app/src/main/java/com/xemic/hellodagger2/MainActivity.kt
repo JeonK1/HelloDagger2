@@ -6,7 +6,9 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     @field:Inject
-    lateinit var hamburger: Hamburger
+    lateinit var hamburger1: Hamburger
+    @field:Inject
+    lateinit var hamburger2: Hamburger
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             .build()
         component.inject(this)
 
-        hamburger.eat()
+        hamburger1.eat()
+        hamburger2.eat()
     }
 }
