@@ -14,7 +14,8 @@ class MainActivity : AppCompatActivity() {
 
         val component: HamburgerComponent = DaggerHamburgerComponent
             .builder()
-            .chickenMeatModule(ChickenMeatModule(2))
+            .meatCount(2)
+            .meatGrade(1)
             .build()
         component.inject(this)
 

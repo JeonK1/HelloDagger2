@@ -2,19 +2,13 @@ package com.xemic.hellodagger2
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
-class ChickenMeatModule (
-    private val count: Int
-) {
+class ChickenMeatModule {
 
     @Provides
-    fun provideCount(): Int {
-        return count
-    }
-
-    @Provides
-    fun provideMeat(meat: ChickenMeat): Meat {
-        return meat
+    fun provideMeat(@Named("count") count: Int, @Named("grade") grade: Int): Meat {
+        return ChickenMeat(count, grade)
     }
 }
