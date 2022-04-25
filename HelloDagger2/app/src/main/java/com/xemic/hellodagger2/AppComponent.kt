@@ -6,5 +6,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [PersonModule::class])
 interface AppComponent {
-    fun getHamburgerComponentBuilder(): HamburgerComponent.Builder
+    fun getHamburgerComponentFactory(): HamburgerComponent.Factory
 }

@@ -13,10 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val component: HamburgerComponent = (application as MyApplication).appComponent
-            .getHamburgerComponentBuilder()
-            .meatCount(2)
-            .meatGrade(1)
-            .build()
+            .getHamburgerComponentFactory()
+            .create(count = 2, grade = 1)
         component.inject(this)
 
         hamburger1.eat()

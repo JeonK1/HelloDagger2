@@ -1,7 +1,6 @@
 package com.xemic.hellodagger2
 
 import dagger.BindsInstance
-import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Named
 
@@ -11,15 +10,11 @@ interface HamburgerComponent {
 
     fun inject(mainActivity: MainActivity)
 
-    @Subcomponent.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun meatCount(@Named("count") count: Int): Builder
-
-        @BindsInstance
-        fun meatGrade(@Named("grade") grade: Int): Builder
-
-        fun build(): HamburgerComponent
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(
+            @BindsInstance @Named("count") count: Int,
+            @BindsInstance @Named("grade") grade: Int
+        ): HamburgerComponent
     }
 }
