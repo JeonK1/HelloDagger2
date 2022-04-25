@@ -1,11 +1,7 @@
 package com.xemic.hellodagger2
 
-import javax.inject.Inject
+interface Meat {
+    var count:Int
 
-class Meat @Inject constructor() {
-    var count = 0
-
-    fun add() {
-        count++
-    }
+    fun add()
 }
