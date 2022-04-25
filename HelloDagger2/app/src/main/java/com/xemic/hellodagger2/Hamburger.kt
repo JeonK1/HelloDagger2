@@ -3,6 +3,7 @@ package com.xemic.hellodagger2
 import android.util.Log
 import javax.inject.Inject
 
+@ActivityScope
 class Hamburger @Inject constructor(
     private val eater: Person,
     private val bread: Bread,
