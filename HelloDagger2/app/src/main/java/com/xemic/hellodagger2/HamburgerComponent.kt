@@ -1,7 +1,6 @@
 package com.xemic.hellodagger2
 
 import dagger.BindsInstance
-import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Named
 
