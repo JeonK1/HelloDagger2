@@ -4,5 +4,5 @@ import dagger.Component
 
 @Component
 interface HamburgerComponent {
-    fun getHamburger(): Hamburger
+    fun inject(mainActivity: MainActivity)
 }
